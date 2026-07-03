@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 <helmet>
@@ -53,7 +54,7 @@
     </button>
 
     <!-- Desktop Nav -->
-    <div style="display:flex;align-items:center;gap:2px;flex:1;justify-content:center">
+    <div class="nav-links-desktop" style="display:flex;align-items:center;gap:2px;flex:1;justify-content:center">
       <button data-act="go_accueil" data-nav="accueil" style="background:none;border:none;cursor:pointer;font-size:12px;font-weight:400;color:#9A9490;padding:6px 9px;letter-spacing:0.05em;white-space:nowrap;transition:color 0.2s;border-bottom:2px solid transparent" style-hover="color:#FFFFFF">Accueil</button>
       <button data-act="go_histoire" data-nav="histoire" style="background:none;border:none;cursor:pointer;font-size:12px;font-weight:400;color:#9A9490;padding:6px 9px;letter-spacing:0.05em;white-space:nowrap;transition:color 0.2s;border-bottom:2px solid transparent" style-hover="color:#FFFFFF">Notre histoire</button>
       <button data-act="go_drep" data-nav="drepanocytose" style="background:none;border:none;cursor:pointer;font-size:12px;font-weight:400;color:#9A9490;padding:6px 9px;letter-spacing:0.05em;white-space:nowrap;transition:color 0.2s;border-bottom:2px solid transparent" style-hover="color:#FFFFFF">La maladie</button>
@@ -67,10 +68,10 @@
 
     <!-- CTA + Hamburger -->
     <div style="flex:none;display:flex;align-items:center;gap:10px">
-      <button data-act="don_link" style="background:#8B1C1C;color:#FFFFFF;border:none;padding:9px 20px;font-size:11.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background 0.2s" style-hover="background:#6D1515">
+      <button data-act="don_link" class="nav-cta-don" style="background:#8B1C1C;color:#FFFFFF;border:none;padding:9px 20px;font-size:11.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background 0.2s" style-hover="background:#6D1515">
         Faire un don
       </button>
-      <button data-act="toggleMobile" style="background:none;border:none;cursor:pointer;padding:6px;display:flex;flex-direction:column;gap:5px">
+      <button data-act="toggleMobile" class="nav-burger" style="background:none;border:none;cursor:pointer;padding:6px;display:flex;flex-direction:column;gap:5px">
         <span style="display:block;width:20px;height:1.5px;background:#FFFFFF"></span>
         <span style="display:block;width:20px;height:1.5px;background:#FFFFFF"></span>
         <span style="display:block;width:13px;height:1.5px;background:#FFFFFF"></span>

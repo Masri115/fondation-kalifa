@@ -1,0 +1,76 @@
+/* ============================================================
+   Fondation Kalifa — adaptations mobiles / tablette
+   Le design original est en styles inline (haute spécificité) : ces
+   règles utilisent des sélecteurs d'attribut + !important pour les
+   surcharger sur petits écrans, sans réécrire tout le HTML.
+   ============================================================ */
+
+/* Le hamburger est masqué par défaut (desktop) ; la nav pleine est visible. */
+.nav-burger { display: none !important; }
+
+/* ---------- Repli de la navigation ---------- */
+@media (max-width: 960px) {
+  .nav-links-desktop { display: none !important; }
+  .nav-burger { display: flex !important; }
+}
+
+/* ---------- Mise en page tablette / mobile ---------- */
+@media (max-width: 768px) {
+
+  /* Toutes les grilles multi-colonnes passent en une seule colonne */
+  [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+
+  /* Gouttières trop larges une fois empilées */
+  [style*="gap:88px"], [style*="gap:80px"], [style*="gap:72px"],
+  [style*="gap:64px"], [style*="gap:56px"] { gap: 36px !important; }
+
+  /* Padding horizontal des sections/cartes ramené à ~20px */
+  [style*="px 40px"], [style*="px 44px"], [style*="px 48px"],
+  [style*="px 56px"], [style*="px 64px"],
+  [style*="padding:48px"], [style*="padding:64px"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  nav { padding-left: 16px !important; padding-right: 16px !important; }
+
+  /* Allège le très grand padding vertical des hero de page intérieure */
+  [style*="padding:144px"] { padding-top: 104px !important; }
+  [style*="padding:120px"] { padding-top: 72px !important; padding-bottom: 72px !important; }
+  [style*="padding:112px"] { padding-top: 72px !important; padding-bottom: 72px !important; }
+
+  /* Réduction des grands titres/chiffres à taille fixe */
+  [style*="font-size:88px"] { font-size: 50px !important; }
+  [style*="font-size:76px"] { font-size: 46px !important; }
+  [style*="font-size:56px"] { font-size: 34px !important; }
+  [style*="font-size:54px"] { font-size: 34px !important; }
+  [style*="font-size:52px"] { font-size: 32px !important; }
+  [style*="font-size:46px"] { font-size: 30px !important; }
+  [style*="font-size:44px"] { font-size: 30px !important; }
+  [style*="font-size:42px"] { font-size: 28px !important; }
+
+  /* Images à hauteur fixe : on réduit pour le portrait mobile */
+  [style*="height:540px"], [style*="height:520px"],
+  [style*="height:480px"], [style*="height:400px"] { height: 300px !important; }
+
+  /* Carte événement « à la une » : l'image empilée garde son ratio */
+  [style*="grid-template-columns:0.78fr"] img { height: auto !important; }
+
+  /* Hero d'accueil : un peu moins haut que 100vh pour éviter le vide */
+  [style*="height:100vh"] { min-height: 560px !important; }
+}
+
+/* ---------- Petits téléphones ---------- */
+@media (max-width: 480px) {
+
+  /* Menu mobile plein écran : titres de lien plus compacts */
+  #mobile-menu { padding: 72px 28px 40px !important; }
+  #mobile-menu button { font-size: 26px !important; }
+
+  /* Le CTA « Faire un don » de la barre est déjà dans le menu : on le retire
+     de la barre pour laisser respirer logo + hamburger */
+  .nav-cta-don { display: none !important; }
+
+  /* Hero d'accueil : titre légèrement réduit */
+  [style*="font-size:clamp(60px,10vw,112px)"] { font-size: 52px !important; }
+}
