@@ -7,6 +7,7 @@
   "use strict";
 
   var DON_LINK = "https://gofund.me/7c0746877";
+  var EVENT_LINK = "https://www.eventbrite.be/e/drepanocytose-et-deuil-quand-la-maladie-laisse-une-empreinte-eternelle-tickets-1991843675051?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=wsa&aff=ebdsshwebmobile";
   var CONTACT_EMAIL = "fondationkalifa@gmail.com";
   var FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/" + CONTACT_EMAIL;
 
@@ -101,6 +102,46 @@
     if (joinErr) joinErr.style.display = state.joinFormError ? "" : "none";
   }
 
+  /* ---------- persistance des brouillons de formulaire (localStorage) ----------
+     Dans le SPA, changer de page ne vide pas les champs (le DOM persiste), mais
+     un rechargement réel de la page le ferait. On sauvegarde donc les saisies
+     pour qu'aucune donnée ne soit perdue, quel que soit le "changement de page". */
+
+  function formKey(form) { return "kalifa_draft_" + form.getAttribute("data-act"); }
+
+  function draftFields(form) {
+    return [].slice.call(form.querySelectorAll("input, textarea, select"))
+      .filter(function (f) { return f.name && f.name.charAt(0) !== "_" && f.type !== "hidden"; });
+  }
+
+  function saveDraft(form) {
+    var data = {};
+    draftFields(form).forEach(function (f) { data[f.name] = f.value; });
+    try { localStorage.setItem(formKey(form), JSON.stringify(data)); } catch (e) {}
+  }
+
+  function restoreDraft(form) {
+    var raw;
+    try { raw = localStorage.getItem(formKey(form)); } catch (e) { return; }
+    if (!raw) return;
+    var data;
+    try { data = JSON.parse(raw); } catch (e) { return; }
+    draftFields(form).forEach(function (f) {
+      if (data[f.name] != null && data[f.name] !== "") f.value = data[f.name];
+    });
+  }
+
+  function clearDraft(form) { try { localStorage.removeItem(formKey(form)); } catch (e) {} }
+
+  document.addEventListener("input", function (e) {
+    var form = e.target.closest('[data-act="submitContact"], [data-act="submitJoin"]');
+    if (form) saveDraft(form);
+  });
+  document.addEventListener("change", function (e) {
+    var form = e.target.closest('[data-act="submitContact"], [data-act="submitJoin"]');
+    if (form) saveDraft(form);
+  });
+
   /* ---------- form submission (FormSubmit.co -> fondationkalifa@gmail.com) ---------- */
 
   function sendForm(form) {
@@ -138,6 +179,7 @@
 
   var DISPATCH = {
     don_link: function () { window.open(DON_LINK, "_blank", "noopener"); },
+    event_reserve: function () { window.open(EVENT_LINK, "_blank", "noopener"); },
     toggleMobile: function () { state.mobileOpen = !state.mobileOpen; renderMobile(); },
     set_don7: function () { state.donAmt = 7; renderDon(); },
     set_don35: function () { state.donAmt = 35; renderDon(); },
@@ -178,10 +220,10 @@
     sendForm(form).then(function (ok) {
       if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
       if (act === "submitContact") {
-        if (ok) { state.formSubmitted = true; form.reset(); }
+        if (ok) { state.formSubmitted = true; form.reset(); clearDraft(form); }
         else { state.contactFormError = true; }
       } else {
-        if (ok) { state.joinFormSubmitted = true; form.reset(); }
+        if (ok) { state.joinFormSubmitted = true; form.reset(); clearDraft(form); }
         else { state.joinFormError = true; }
       }
       renderForms();
@@ -205,6 +247,9 @@
       el.setAttribute("style", el._baseStyle || "");
     });
   });
+
+  /* restaure les brouillons éventuels au chargement */
+  document.querySelectorAll('[data-act="submitContact"], [data-act="submitJoin"]').forEach(restoreDraft);
 
   renderAll();
 })();
