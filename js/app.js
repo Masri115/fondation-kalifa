@@ -170,12 +170,52 @@
 
   /* ---------- actions ---------- */
 
-  function go(page) {
+  /* ---------- routage par ancre (#slug) + historique navigateur ---------- */
+
+  var PAGE_SLUGS = {
+    accueil: "accueil",
+    histoire: "notre-histoire",
+    drepanocytose: "la-maladie",
+    actions: "nos-actions",
+    evenements: "evenements",
+    temoignages: "temoignages",
+    don: "faire-un-don",
+    rejoindre: "nous-rejoindre",
+    partenaires: "partenaires",
+    contact: "contact",
+  };
+  var SLUG_PAGES = {};
+  Object.keys(PAGE_SLUGS).forEach(function (p) { SLUG_PAGES[PAGE_SLUGS[p]] = p; });
+
+  function pageFromHash() {
+    var slug = (location.hash || "").replace(/^#/, "");
+    return SLUG_PAGES[slug] || "accueil";
+  }
+
+  /* applique une page (affichage) sans toucher à l'historique */
+  function applyPage(page, scroll) {
     state.page = page;
     state.mobileOpen = false;
-    window.scrollTo({ top: 0, behavior: "auto" });
+    if (scroll) window.scrollTo({ top: 0, behavior: "auto" });
     renderAll();
   }
+
+  /* navigation déclenchée par l'utilisateur : met aussi à jour l'URL/l'historique */
+  function go(page) {
+    applyPage(page, true);
+    var url = page === "accueil"
+      ? location.pathname + location.search
+      : "#" + (PAGE_SLUGS[page] || page);
+    if (location.hash !== ("#" + (PAGE_SLUGS[page] || page)) &&
+        !(page === "accueil" && !location.hash)) {
+      history.pushState({ page: page }, "", url);
+    }
+  }
+
+  /* boutons retour / avance du navigateur */
+  window.addEventListener("popstate", function () {
+    applyPage(pageFromHash(), true);
+  });
 
   var DISPATCH = {
     don_link: function () { window.open(DON_LINK, "_blank", "noopener"); },
@@ -251,5 +291,6 @@
   /* restaure les brouillons éventuels au chargement */
   document.querySelectorAll('[data-act="submitContact"], [data-act="submitJoin"]').forEach(restoreDraft);
 
-  renderAll();
+  /* ouvre directement la page correspondant à l'ancre de l'URL (lien partagé) */
+  applyPage(pageFromHash(), false);
 })();
