@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  var DON_LINK = "https://tr.ee/zDW-dFSHlH";
+  var DON_LINK = "https://gofund.me/7c0746877";
   var CONTACT_EMAIL = "fondationkalifa@gmail.com";
   var FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/" + CONTACT_EMAIL;
 
