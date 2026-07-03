@@ -7,6 +7,8 @@
   "use strict";
 
   var DON_LINK = "https://tr.ee/zDW-dFSHlH";
+  var CONTACT_EMAIL = "fondationkalifa@gmail.com";
+  var FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/" + CONTACT_EMAIL;
 
   var state = {
     page: "accueil",
@@ -16,6 +18,8 @@
     openFaq: null,
     formSubmitted: false,
     joinFormSubmitted: false,
+    contactFormError: false,
+    joinFormError: false,
   };
 
   var nav = document.querySelector("nav");
@@ -91,6 +95,32 @@
         el.style.display = p[1] ? "" : "none";
       });
     });
+    var contactErr = document.querySelector('[data-cond="contactFormError"]');
+    if (contactErr) contactErr.style.display = state.contactFormError ? "" : "none";
+    var joinErr = document.querySelector('[data-cond="joinFormError"]');
+    if (joinErr) joinErr.style.display = state.joinFormError ? "" : "none";
+  }
+
+  /* ---------- form submission (FormSubmit.co -> fondationkalifa@gmail.com) ---------- */
+
+  function sendForm(form) {
+    var data = {};
+    new FormData(form).forEach(function (value, key) { data[key] = value; });
+    // honeypot: if filled, silently pretend success without sending (bot trap)
+    if (data._honey) return Promise.resolve(true);
+    delete data._honey;
+
+    return fetch(FORMSUBMIT_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(data),
+    }).then(function (res) {
+      return res.json().then(function (json) {
+        // FormSubmit replies HTTP 200 even when the target address still
+        // needs one-time activation, so the JSON body is the real verdict.
+        return res.ok && String(json.success) === "true";
+      });
+    }).catch(function () { return false; });
   }
 
   function renderAll() {
@@ -134,8 +164,28 @@
     var form = e.target.closest("[data-act]");
     if (!form) return;
     var act = form.getAttribute("data-act");
-    if (act === "submitContact") { e.preventDefault(); state.formSubmitted = true; renderForms(); }
-    if (act === "submitJoin") { e.preventDefault(); state.joinFormSubmitted = true; renderForms(); }
+    if (act !== "submitContact" && act !== "submitJoin") return;
+    e.preventDefault();
+
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalLabel = submitBtn ? submitBtn.textContent : "";
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Envoi en cours…"; }
+
+    if (act === "submitContact") state.contactFormError = false;
+    if (act === "submitJoin") state.joinFormError = false;
+    renderForms();
+
+    sendForm(form).then(function (ok) {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+      if (act === "submitContact") {
+        if (ok) { state.formSubmitted = true; form.reset(); }
+        else { state.contactFormError = true; }
+      } else {
+        if (ok) { state.joinFormSubmitted = true; form.reset(); }
+        else { state.joinFormError = true; }
+      }
+      renderForms();
+    });
   });
 
   /* scroll-aware navigation bar */
