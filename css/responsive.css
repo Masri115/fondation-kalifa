@@ -60,8 +60,11 @@
   /* Carte événement « à la une » : l'image empilée garde son ratio */
   [style*="grid-template-columns:0.78fr"] img { height: auto !important; }
 
-  /* Hero d'accueil : un peu moins haut que 100vh pour éviter le vide */
-  [style*="height:100vh"] { min-height: 560px !important; }
+  /* Hero d'accueil : un peu moins haut que 100vh pour éviter le vide, et
+     recadrage horizontal moins agressif de la photo d'équipe (une image
+     paysage dans un hero très haut se retrouve zoomée/rognée sur les bords) */
+  [style*="height:100vh"] { height: 92vh !important; min-height: 560px !important; }
+  #hero-team-photo { object-position: center 18% !important; }
 }
 
 /* ---------- Petits téléphones ---------- */

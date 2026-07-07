@@ -96,14 +96,14 @@
     <button data-act="go_partenaires" data-nav="partenaires" style="background:none;border:none;cursor:pointer;text-align:left;font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:500;color:#FFFFFF;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07);transition:color 0.15s" style-hover="color:#B91C1C">Partenaires</button>
     <button data-act="go_contact" data-nav="contact" style="background:none;border:none;cursor:pointer;text-align:left;font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:500;color:#FFFFFF;padding:10px 0;transition:color 0.15s" style-hover="color:#B91C1C">Contact</button>
   </div>
-  <div style="display:flex;gap:24px;margin-top:40px">
-    <span style="font-size:11px;color:#4A4340;letter-spacing:0.05em">Instagram</span>
+  <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:40px">
+    <a href="https://www.instagram.com/fondationkalifa/" target="_blank" rel="noopener" style="font-size:11px;color:#8A8480;letter-spacing:0.05em;text-decoration:none;transition:color 0.15s" style-hover="color:#FFFFFF">Instagram</a>
     <span style="font-size:11px;color:#4A4340">·</span>
-    <span style="font-size:11px;color:#4A4340;letter-spacing:0.05em">Facebook</span>
+    <a href="https://www.facebook.com/p/FondationKalifa-61577974260767/" target="_blank" rel="noopener" style="font-size:11px;color:#8A8480;letter-spacing:0.05em;text-decoration:none;transition:color 0.15s" style-hover="color:#FFFFFF">Facebook</a>
     <span style="font-size:11px;color:#4A4340">·</span>
     <span style="font-size:11px;color:#4A4340;letter-spacing:0.05em">TikTok</span>
     <span style="font-size:11px;color:#4A4340">·</span>
-    <span style="font-size:11px;color:#4A4340;letter-spacing:0.05em">LinkedIn</span>
+    <a href="https://be.linkedin.com/company/fondation-kalifa-kalifa-asbl" target="_blank" rel="noopener" style="font-size:11px;color:#8A8480;letter-spacing:0.05em;text-decoration:none;transition:color 0.15s" style-hover="color:#FFFFFF">LinkedIn</a>
   </div>
 </div>
 
@@ -117,9 +117,9 @@
 
   <!-- HERO full viewport -->
   <section style="position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-    <img src="assets/hero-equipe-kalifa.jpg" alt="L'équipe de bénévoles de la Fondation Kalifa" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center 30%">
-    <!-- Multi-layer overlay -->
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(8,3,3,0.72) 0%,rgba(15,5,5,0.82) 100%)"></div>
+    <img id="hero-team-photo" src="assets/hero-equipe-kalifa.jpg" alt="L'équipe de bénévoles de la Fondation Kalifa" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center 22%">
+    <!-- Multi-layer overlay : vignette plus sombre derrière le texte, photo plus visible sur les bords -->
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 75% 65% at 50% 46%,rgba(6,3,3,0.80) 0%,rgba(8,3,3,0.55) 55%,rgba(10,4,4,0.34) 100%)"></div>
     <!-- Red left border accent -->
     <div style="position:absolute;left:0;top:0;bottom:0;width:5px;background:#8B1C1C"></div>
     <!-- Gold top accent line -->
@@ -129,20 +129,20 @@
     <div style="position:relative;z-index:2;text-align:center;padding:0 32px;max-width:860px;animation:heroReveal 1s ease both">
       <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:32px">
         <div style="width:24px;height:1px;background:#B8933F"></div>
-        <span style="font-size:10px;font-weight:400;letter-spacing:0.4em;color:#B8933F;text-transform:uppercase">Fondation Kalifa - Kalifa ASBL Belgique</span>
+        <span style="font-size:10px;font-weight:400;letter-spacing:0.4em;color:#B8933F;text-transform:uppercase;text-shadow:0 2px 10px rgba(0,0,0,0.6)">Fondation Kalifa - Kalifa ASBL Belgique</span>
         <div style="width:24px;height:1px;background:#B8933F"></div>
       </div>
 
-      <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(60px,10vw,112px);font-weight:700;color:#FFFFFF;line-height:0.92;letter-spacing:-0.01em;margin-bottom:28px">
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(60px,10vw,112px);font-weight:700;color:#FFFFFF;line-height:0.92;letter-spacing:-0.01em;margin-bottom:28px;text-shadow:0 4px 24px rgba(0,0,0,0.55)">
         Fondation<br>Kalifa
       </h1>
 
-      <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3.2vw,34px);font-weight:400;font-style:italic;color:#E8D8C8;margin-bottom:16px;letter-spacing:0.02em">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3.2vw,34px);font-weight:400;font-style:italic;color:#E8D8C8;margin-bottom:16px;letter-spacing:0.02em;text-shadow:0 2px 16px rgba(0,0,0,0.6)">
         La voix des <span style="color:#B8933F;font-style:normal;font-weight:600">s'ang</span> voix
       </div>
 
-      <div style="font-size:clamp(11px,1.4vw,14px);font-weight:500;color:#B8933F;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:24px">Informer. Dépister. Agir.</div>
-      <p style="font-size:clamp(13px,1.6vw,16px);font-weight:300;color:rgba(255,255,255,0.68);margin-bottom:52px;line-height:1.8;letter-spacing:0.01em;max-width:640px;margin-left:auto;margin-right:auto">
+      <div style="font-size:clamp(11px,1.4vw,14px);font-weight:500;color:#B8933F;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:24px;text-shadow:0 2px 12px rgba(0,0,0,0.6)">Informer. Dépister. Agir.</div>
+      <p style="font-size:clamp(13px,1.6vw,16px);font-weight:300;color:rgba(255,255,255,0.85);margin-bottom:52px;line-height:1.8;letter-spacing:0.01em;max-width:640px;margin-left:auto;margin-right:auto;text-shadow:0 2px 14px rgba(0,0,0,0.6)">
         La drépanocytose est la maladie génétique la plus répandue au monde, mais elle reste encore trop méconnue. À travers la sensibilisation, le dépistage, le don de sang et le plaidoyer, la Fondation Kalifa œuvre chaque jour pour informer, prévenir et faire entendre la voix des personnes concernées.
       </p>
 
@@ -1052,25 +1052,7 @@
         <span style="font-size:10px;font-weight:500;letter-spacing:0.35em;color:#8B1C1C;text-transform:uppercase">À venir</span>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:72px">
-        <div style="background:#FFFFFF;border:1px solid #E8E0D8;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s" style-hover="transform:translateY(-5px);box-shadow:0 20px 56px rgba(0,0,0,0.09)">
-          <div style="background:#8B1C1C;padding:24px 28px;display:flex;align-items:center;gap:16px">
-            <div style="text-align:center">
-              <div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:#FFFFFF;line-height:1">TBD</div>
-              <div style="font-size:10px;color:rgba(255,255,255,0.65);letter-spacing:0.12em">2026</div>
-            </div>
-            <div style="width:1px;height:40px;background:rgba(255,255,255,0.25)"></div>
-            <div>
-              <div style="font-size:12px;font-weight:500;color:#FFFFFF;letter-spacing:0.06em">KALIFA DAY</div>
-              <div style="font-size:11px;color:rgba(255,255,255,0.55);margin-top:3px">Bruxelles</div>
-            </div>
-          </div>
-          <div style="padding:28px">
-            <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#0D0D0D;margin-bottom:12px">KALIFA DAY 2026</h3>
-            <p style="font-size:13px;font-weight:300;color:#6B6560;line-height:1.7;margin-bottom:24px">Journée annuelle de sensibilisation, de dépistage et de mobilisation. Programme à venir.</p>
-            <button data-act="go_contact" data-nav="contact" style="background:#0D0D0D;color:#FFFFFF;border:none;padding:11px 22px;font-size:11.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:background 0.2s" style-hover="background:#8B1C1C">M'informer</button>
-          </div>
-        </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:72px">
         <div style="background:#FFFFFF;border:1px solid #E8E0D8;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s" style-hover="transform:translateY(-5px);box-shadow:0 20px 56px rgba(0,0,0,0.09)">
           <div style="background:#B8933F;padding:24px 28px;display:flex;align-items:center;gap:16px">
             <div style="text-align:center">
@@ -1567,34 +1549,34 @@
           <span style="font-size:10px;font-weight:500;letter-spacing:0.35em;color:#8B1C1C;text-transform:uppercase">Réseaux sociaux</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;align-items:center;gap:16px;padding:14px 18px;background:#FFFFFF;border:1px solid #E8E0D8;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">
+          <a href="https://www.instagram.com/fondationkalifa/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:16px;padding:14px 18px;background:#FFFFFF;border:1px solid #E8E0D8;text-decoration:none;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">
             <span style="font-size:16px">📷</span>
             <div>
               <div style="font-size:10px;color:#8B8480;letter-spacing:0.12em;text-transform:uppercase">Instagram</div>
               <div style="font-size:14px;font-weight:400;color:#0D0D0D">@fondationkalifa</div>
             </div>
-          </div>
-          <div style="display:flex;align-items:center;gap:16px;padding:14px 18px;background:#FFFFFF;border:1px solid #E8E0D8;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">
+          </a>
+          <a href="https://www.facebook.com/p/FondationKalifa-61577974260767/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:16px;padding:14px 18px;background:#FFFFFF;border:1px solid #E8E0D8;text-decoration:none;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">
             <span style="font-size:16px">📘</span>
             <div>
               <div style="font-size:10px;color:#8B8480;letter-spacing:0.12em;text-transform:uppercase">Facebook</div>
               <div style="font-size:14px;font-weight:400;color:#0D0D0D">Fondation Kalifa</div>
             </div>
-          </div>
-          <div style="display:flex;align-items:center;gap:16px;padding:14px 18px;background:#FFFFFF;border:1px solid #E8E0D8;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">
+          </a>
+          <div style="display:flex;align-items:center;gap:16px;padding:14px 18px;background:#FFFFFF;border:1px solid #E8E0D8;opacity:0.6">
             <span style="font-size:16px">🎵</span>
             <div>
               <div style="font-size:10px;color:#8B8480;letter-spacing:0.12em;text-transform:uppercase">TikTok</div>
-              <div style="font-size:14px;font-weight:400;color:#0D0D0D">@fondationkalifa</div>
+              <div style="font-size:14px;font-weight:400;color:#0D0D0D">Bientôt disponible</div>
             </div>
           </div>
-          <div style="display:flex;align-items:center;gap:16px;padding:14px 18px;background:#FFFFFF;border:1px solid #E8E0D8;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">
+          <a href="https://be.linkedin.com/company/fondation-kalifa-kalifa-asbl" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:16px;padding:14px 18px;background:#FFFFFF;border:1px solid #E8E0D8;text-decoration:none;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">
             <span style="font-size:16px">💼</span>
             <div>
               <div style="font-size:10px;color:#8B8480;letter-spacing:0.12em;text-transform:uppercase">LinkedIn</div>
               <div style="font-size:14px;font-weight:400;color:#0D0D0D">Fondation Kalifa ASBL</div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -1644,56 +1626,56 @@
       <!-- Brand -->
       <div>
         <img src="assets/logo-kalifa-on-dark.png" alt="Fondation Kalifa — La voix des s'ang voix" style="height:46px;width:auto;display:block;margin-bottom:22px">
-        <p style="font-size:12.5px;font-weight:300;color:#5A5550;line-height:1.8;max-width:260px">ASBL belge engagée dans la sensibilisation, le dépistage et l'accompagnement face à la drépanocytose.</p>
+        <p style="font-size:12.5px;font-weight:300;color:#9A9490;line-height:1.8;max-width:260px">ASBL belge engagée dans la sensibilisation, le dépistage et l'accompagnement face à la drépanocytose.</p>
         <div style="margin-top:26px;display:flex;gap:10px">
-          <div style="width:34px;height:34px;border:1px solid #201818;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">📷</div>
-          <div style="width:34px;height:34px;border:1px solid #201818;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">📘</div>
-          <div style="width:34px;height:34px;border:1px solid #201818;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">🎵</div>
-          <div style="width:34px;height:34px;border:1px solid #201818;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">💼</div>
+          <a href="https://www.instagram.com/fondationkalifa/" target="_blank" rel="noopener" style="width:34px;height:34px;border:1px solid #2A2420;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">📷</a>
+          <a href="https://www.facebook.com/p/FondationKalifa-61577974260767/" target="_blank" rel="noopener" style="width:34px;height:34px;border:1px solid #2A2420;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">📘</a>
+          <div style="width:34px;height:34px;border:1px solid #2A2420;display:flex;align-items:center;justify-content:center;font-size:13px;opacity:0.5" title="TikTok — bientôt disponible">🎵</div>
+          <a href="https://be.linkedin.com/company/fondation-kalifa-kalifa-asbl" target="_blank" rel="noopener" style="width:34px;height:34px;border:1px solid #2A2420;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;transition:border-color 0.2s" style-hover="border-color:#8B1C1C">💼</a>
         </div>
       </div>
 
       <!-- La Fondation -->
       <div>
-        <div style="font-size:10px;font-weight:500;letter-spacing:0.22em;color:#5A5550;text-transform:uppercase;margin-bottom:20px">La Fondation</div>
+        <div style="font-size:10px;font-weight:500;letter-spacing:0.22em;color:#9A9490;text-transform:uppercase;margin-bottom:20px">La Fondation</div>
         <div style="display:flex;flex-direction:column;gap:10px">
-          <button data-act="go_histoire" data-nav="histoire" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#8A8480;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Notre histoire</button>
-          <button data-act="go_drep" data-nav="drepanocytose" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#8A8480;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">La drépanocytose</button>
-          <button data-act="go_actions" data-nav="actions" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#8A8480;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Nos actions</button>
-          <button data-act="go_temoignages" data-nav="temoignages" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#8A8480;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Témoignages</button>
-          <button data-act="go_partenaires" data-nav="partenaires" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#8A8480;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Partenaires</button>
+          <button data-act="go_histoire" data-nav="histoire" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#9A9490;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Notre histoire</button>
+          <button data-act="go_drep" data-nav="drepanocytose" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#9A9490;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">La drépanocytose</button>
+          <button data-act="go_actions" data-nav="actions" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#9A9490;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Nos actions</button>
+          <button data-act="go_temoignages" data-nav="temoignages" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#9A9490;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Témoignages</button>
+          <button data-act="go_partenaires" data-nav="partenaires" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#9A9490;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Partenaires</button>
         </div>
       </div>
 
       <!-- Agir -->
       <div>
-        <div style="font-size:10px;font-weight:500;letter-spacing:0.22em;color:#5A5550;text-transform:uppercase;margin-bottom:20px">Agir</div>
+        <div style="font-size:10px;font-weight:500;letter-spacing:0.22em;color:#9A9490;text-transform:uppercase;margin-bottom:20px">Agir</div>
         <div style="display:flex;flex-direction:column;gap:10px">
-          <button data-act="don_link" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#8A8480;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Faire un don</button>
-          <button data-act="go_rejoindre" data-nav="rejoindre" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#8A8480;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Nous rejoindre</button>
-          <button data-act="go_events" data-nav="evenements" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#8A8480;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Événements</button>
-          <button data-act="go_contact" data-nav="contact" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#8A8480;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Contact</button>
+          <button data-act="don_link" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#9A9490;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Faire un don</button>
+          <button data-act="go_rejoindre" data-nav="rejoindre" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#9A9490;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Nous rejoindre</button>
+          <button data-act="go_events" data-nav="evenements" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#9A9490;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Événements</button>
+          <button data-act="go_contact" data-nav="contact" style="background:none;border:none;cursor:pointer;text-align:left;font-size:13px;font-weight:300;color:#9A9490;padding:0;transition:color 0.15s" style-hover="color:#FFFFFF">Contact</button>
         </div>
       </div>
 
       <!-- Engagement -->
       <div>
-        <div style="font-size:10px;font-weight:500;letter-spacing:0.22em;color:#5A5550;text-transform:uppercase;margin-bottom:20px">Notre engagement</div>
-        <p style="font-size:12.5px;font-weight:300;color:#5A5550;line-height:1.85;font-style:italic">"Chaque dépistage est une vie mieux informée. Chaque action est une voix qui compte."</p>
+        <div style="font-size:10px;font-weight:500;letter-spacing:0.22em;color:#9A9490;text-transform:uppercase;margin-bottom:20px">Notre engagement</div>
+        <p style="font-size:12.5px;font-weight:300;color:#9A9490;line-height:1.85;font-style:italic">"Chaque dépistage est une vie mieux informée. Chaque action est une voix qui compte."</p>
       </div>
     </div>
     <div style="border-top:1px solid #1A1210;padding-top:22px;display:flex;flex-direction:column;gap:16px">
-      <div style="display:flex;flex-wrap:wrap;gap:8px 28px;font-size:11.5px;color:#5A5550;line-height:1.7">
-        <span style="color:#8A8480;font-weight:500;letter-spacing:0.04em">Kalifa ASBL</span>
+      <div style="display:flex;flex-wrap:wrap;gap:8px 28px;font-size:11.5px;color:#9A9490;line-height:1.7">
+        <span style="color:#C0BBB6;font-weight:500;letter-spacing:0.04em">Kalifa ASBL</span>
         <span>Chaussée de Louvain 751, 1140 Evere</span>
-        <a href="mailto:fondationkalifa@gmail.com" style="color:#5A5550;text-decoration:none;transition:color 0.2s" style-hover="color:#FFFFFF">fondationkalifa@gmail.com</a>
-        <a href="tel:+32492441221" style="color:#5A5550;text-decoration:none;transition:color 0.2s" style-hover="color:#FFFFFF">+32 492 44 12 21</a>
+        <a href="mailto:fondationkalifa@gmail.com" style="color:#9A9490;text-decoration:none;transition:color 0.2s" style-hover="color:#FFFFFF">fondationkalifa@gmail.com</a>
+        <a href="tel:+32492441221" style="color:#9A9490;text-decoration:none;transition:color 0.2s" style-hover="color:#FFFFFF">+32 492 44 12 21</a>
         <span>IBAN BE93 0020 1933 3367</span>
         <span>TVA BE 1023.628.132</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
-        <div style="font-size:11.5px;color:#3A3430">© 2024 Fondation Kalifa ASBL · fondationkalifa.org</div>
-        <div style="font-size:11.5px;color:#3A3430">Belgique · Tous droits réservés</div>
+        <div style="font-size:11.5px;color:#8A8480">© 2024 Fondation Kalifa ASBL · fondationkalifa.org</div>
+        <div style="font-size:11.5px;color:#8A8480">Belgique · Tous droits réservés</div>
       </div>
     </div>
   </div>
